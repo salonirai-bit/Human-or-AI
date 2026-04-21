@@ -1,0 +1,18 @@
+Google Sheets logging (reference only)
+======================================
+
+The game no longer loads leaderboard code or google-sheets.config.js, so nothing in
+the app POSTs to Apps Script by default. The files here are a template if you want
+to log scores from your own page, extension, or a fork that restores a leaderboard.
+
+APPS_SCRIPT.gs — paste into Extensions → Apps Script on your spreadsheet, deploy as
+Web app (Execute as: Me). Call the deployment URL with POST + JSON body:
+
+  { "name": "Player", "score": 80, "accuracy": 75, "at": "2026-01-01T12:00:00.000Z" }
+
+Content-Type: text/plain is typical from static sites (see former leaderboard.js).
+
+Sheet tab: create "Scores" with row 1: Timestamp | Player | Score | Accuracy.
+
+Security: the Web app URL is a public write endpoint; prefer “Anyone in organization”
+when deploying if available.

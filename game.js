@@ -7,7 +7,9 @@ const questions = [
             { url: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800', label: 'Image B' }
         ],
         correctAnswer: 'Image A',
-        explanation: 'Image A is a real photograph taken in Norway. While both look realistic, AI-generated landscapes often have subtle inconsistencies in lighting, shadows, or natural formations. Human photographers capture authentic atmospheric conditions and genuine geographical features.'
+        explanation: `This stunning photo was taken by landscape photographer Sam Ferrara.
+
+The image features a sea of clouds at sunset in Randa, Switzerland; the prominent peak shown is the Weisshorn.`
     },
     {
         type: 'text',
@@ -25,7 +27,9 @@ const questions = [
             { url: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800', label: 'Image B' }
         ],
         correctAnswer: 'Image B',
-        explanation: 'Image B was AI-generated. Common tells include: slightly asymmetric facial features, overly smooth skin texture, inconsistent lighting on hair versus face, and unnatural eye reflections. Real portraits show natural skin texture and consistent lighting.'
+        explanation: `This photo was taken by photographer Joseph Gonzalez.
+
+The image is a well-known portrait available on Unsplash, a popular platform for royalty-free photography. The subject in the photo has also been identified as Serene Clinton in various professional and business contexts.`
     },
     {
         type: 'text',
@@ -33,7 +37,12 @@ const questions = [
         content: '"The only way to do great work is to love what you do. If you haven\'t found it yet, keep looking. Don\'t settle."',
         options: ['Human', 'AI'],
         correctAnswer: 'Human',
-        explanation: 'This is a famous quote by Steve Jobs. Human quotes often have authentic context, personal experience, and cultural impact. While AI can mimic inspirational language, quotes with verified attribution and historical significance are definitively human.'
+        explanation: `Steve Jobs said that line during his famous Stanford University commencement speech 2005, delivered on June 12, 2005.
+
+It appears in the second part of the speech (the "love and loss" story), where he talks about being fired from Apple and how it led him to rediscover what he loved doing.
+
+That quote is part of a longer passage where he says:
+"...the only way to do great work is to love what you do… If you haven't found it yet, keep looking, and don't settle…"`
     },
     {
         type: 'image',
@@ -43,7 +52,7 @@ const questions = [
             { url: 'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=800', label: 'Image B' }
         ],
         correctAnswer: 'Image A',
-        explanation: 'Image A is real architecture. AI-generated buildings often have impossible geometry, inconsistent perspective, or physically improbable structures. Real buildings follow engineering principles and have consistent architectural styles throughout.'
+        explanation: `This image was clicked by Ben O'Bro, captured in New York City.`
     },
     {
         type: 'text',
@@ -51,7 +60,20 @@ const questions = [
         content: 'This recipe has been passed down through four generations of my family. My grandmother would make this every Sunday, and the smell still brings me back to her kitchen, flour dusting the counters, her laugh echoing off the walls.',
         options: ['Human', 'AI'],
         correctAnswer: 'Human',
+        skipExplanation: true,
         explanation: 'This is human-written. The specific sensory details (flour dusting, laughter echoing), personal family context, and emotional connection show authentic human memory and experience. AI tends to be more generic with emotional descriptions.'
+    },
+    {
+        type: 'text',
+        title: 'Human or AI: Who wrote this passage?',
+        content: 'I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.',
+        options: ['Human', 'AI'],
+        correctAnswer: 'Human',
+        explanation: `Human-written.
+
+Author: Henry David Thoreau (1817–1862), American essayist, philosopher, and naturalist.
+
+Source: Walden; or, Life in the Woods (1854), from the chapter "Where I Lived, and What I Lived For." The book grew out of the two years, two months, and two days he spent in a cabin he built near Walden Pond in Concord, Massachusetts.`
     },
     {
         type: 'text',
@@ -63,32 +85,6 @@ const questions = [
     },
     {
         type: 'image',
-        title: 'Which food photo is AI-generated?',
-        images: [
-            { url: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800', label: 'Image A' },
-            { url: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800', label: 'Image B' }
-        ],
-        correctAnswer: 'Image A',
-        explanation: 'Image A has subtle AI tells: overly perfect ingredient placement, unnaturally consistent cheese melting patterns, and lighting that seems slightly too uniform. Real food photography has natural imperfections and authentic texture variations.'
-    },
-    {
-        type: 'text',
-        title: 'Is this tech article excerpt human or AI?',
-        content: 'The new framework promises to revolutionize development workflows by providing seamless integration capabilities and enhanced performance metrics. Developers can leverage its robust architecture to build scalable solutions efficiently.',
-        options: ['Human', 'AI'],
-        correctAnswer: 'AI',
-        explanation: 'This is AI-generated. It uses buzzwords without substance: "revolutionize," "seamless," "leverage," "robust." Human tech writers typically include specific examples, version numbers, or concrete comparisons rather than generic marketing language.'
-    },
-    {
-        type: 'text',
-        title: 'Who wrote this childhood memory?',
-        content: 'I remember my childhood summers fondly. We would play outside, enjoy ice cream, and spend time with family. Those were good times filled with happiness and joy.',
-        options: ['Human', 'AI'],
-        correctAnswer: 'AI',
-        explanation: 'AI-generated. It\'s too generic and lacks specific details that make memories authentic: no particular games, ice cream flavors, family members\' names, or unique incidents. Human memories include sensory details and specific moments.'
-    },
-    {
-        type: 'image',
         title: 'Which nature scene is AI-created?',
         images: [
             { url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800', label: 'Image A' },
@@ -96,32 +92,6 @@ const questions = [
         ],
         correctAnswer: 'Image B',
         explanation: 'Image B shows AI generation patterns: trees with inconsistent branch structures, foliage that appears too uniform, and lighting that doesn\'t match the time of day suggested by shadows. Real forests have natural chaos and variation.'
-    },
-    {
-        type: 'text',
-        title: 'Human or AI: Who wrote this movie review?',
-        content: 'This film delivers a compelling narrative with strong performances. The cinematography is excellent and the pacing keeps viewers engaged throughout. Overall, it\'s a well-crafted piece that succeeds in its genre.',
-        options: ['Human', 'AI'],
-        correctAnswer: 'AI',
-        explanation: 'AI-written. It\'s generic praise without specific examples: which performances? what cinematography techniques? how does pacing work? Human reviewers cite specific scenes, actor choices, or compare to other films in the genre.'
-    },
-    {
-        type: 'text',
-        title: 'Is this a real historical quote?',
-        content: '"In the midst of winter, I found there was, within me, an invincible summer." - Albert Camus',
-        options: ['Human', 'AI'],
-        correctAnswer: 'Human',
-        explanation: 'This is a genuine quote from Albert Camus\' essay "Return to Tipasa." The philosophical depth, personal discovery, and poetic metaphor are characteristic of Camus\' existentialist writing style and verified in his published works.'
-    },
-    {
-        type: 'image',
-        title: 'Which animal photo is real?',
-        images: [
-            { url: 'https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=800', label: 'Image A' },
-            { url: 'https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=800', label: 'Image B' }
-        ],
-        correctAnswer: 'Image A',
-        explanation: 'Image A is a real fox photograph. AI animal images often have issues with: eye symmetry, fur texture consistency, anatomically incorrect proportions, or unnatural poses. Real wildlife photos capture authentic animal behavior and anatomy.'
     },
     {
         type: 'text',
@@ -176,8 +146,11 @@ class Game {
 
         const question = questions[this.currentQuestion];
 
-        document.getElementById('questionNumber').textContent = `Question ${this.currentQuestion + 1}/15`;
-        document.getElementById('questionTitle').textContent = question.title;
+        document.getElementById('questionNumber').textContent = `Question ${this.currentQuestion + 1}/${questions.length}`;
+        document.getElementById('questionTitle').textContent =
+            question.type === 'image'
+                ? 'Which image out of these two was clicked by a human?'
+                : question.title;
         document.getElementById('score').textContent = `Score: ${this.score}`;
 
         const contentDiv = document.getElementById('questionContent');
@@ -187,7 +160,7 @@ class Game {
         buttonsDiv.innerHTML = '';
 
         if (question.type === 'image') {
-            buttonsDiv.className = 'answer-buttons two-col';
+            buttonsDiv.className = 'answer-buttons answer-buttons--image';
 
             question.images.forEach((img, index) => {
                 const imgDiv = document.createElement('div');
@@ -204,6 +177,12 @@ class Game {
                 btn.addEventListener('click', () => this.checkAnswer(img.label, question));
                 buttonsDiv.appendChild(btn);
             });
+
+            const noneBtn = document.createElement('button');
+            noneBtn.className = 'answer-btn answer-btn--none';
+            noneBtn.textContent = 'None';
+            noneBtn.addEventListener('click', () => this.checkAnswer('None', question));
+            buttonsDiv.appendChild(noneBtn);
 
             contentDiv.className = 'image-comparison';
         } else {
@@ -227,15 +206,9 @@ class Game {
         this.timeLeft = 45;
         document.getElementById('timer').textContent = this.timeLeft;
 
-        const timerBar = document.getElementById('timerBar');
-        timerBar.style.width = '100%';
-
         this.timerInterval = setInterval(() => {
             this.timeLeft--;
             document.getElementById('timer').textContent = this.timeLeft;
-
-            const percentage = (this.timeLeft / 45) * 100;
-            timerBar.style.width = percentage + '%';
 
             if (this.timeLeft <= 0) {
                 clearInterval(this.timerInterval);
@@ -269,19 +242,27 @@ class Game {
             });
         }
 
-        setTimeout(() => this.showExplanation(isCorrect, question), 1500);
+        setTimeout(() => {
+            if (question.skipExplanation) {
+                this.nextQuestion();
+            } else {
+                this.showExplanation(isCorrect, question);
+            }
+        }, 1500);
     }
 
     showExplanation(isCorrect, question) {
-        document.getElementById('resultIcon').textContent = isCorrect ? '✅' : '❌';
-        document.getElementById('resultText').textContent = isCorrect ?
-            'Correct! Well done!' :
-            `Incorrect! The answer was: ${question.correctAnswer}`;
+        const iconEl = document.getElementById('resultIcon');
+        iconEl.textContent = isCorrect ? '✓' : '×';
+        iconEl.className = 'result-icon ' + (isCorrect ? 'is-correct' : 'is-incorrect');
+        document.getElementById('resultText').textContent = isCorrect
+            ? 'Correct! Well done!'
+            : `Incorrect! The answer was: ${question.correctAnswer}`;
         document.getElementById('explanationText').textContent = question.explanation;
 
         const nextBtn = document.getElementById('nextBtn');
-        nextBtn.textContent = this.currentQuestion === questions.length - 1 ?
-            'See Results' : 'Next Question';
+        nextBtn.textContent =
+            this.currentQuestion === questions.length - 1 ? 'See results' : 'Next question';
 
         this.showScreen('explanationScreen');
     }
@@ -297,24 +278,11 @@ class Game {
     }
 
     endGame() {
-        const accuracy = Math.round((this.score / 150) * 100);
+        const maxScore = questions.length * 10;
+        const accuracy = Math.round((this.score / maxScore) * 100);
 
-        document.getElementById('finalPlayerName').textContent = `${this.playerName}'s Results`;
-        document.getElementById('finalScore').textContent = this.score + ' / 150';
+        document.getElementById('finalScore').textContent = `${this.score} / ${maxScore}`;
         document.getElementById('accuracy').textContent = accuracy + '%';
-
-        let message = '';
-        if (accuracy >= 80) {
-            message = '🌟 Exceptional! You have a keen eye for distinguishing AI from human creativity!';
-        } else if (accuracy >= 60) {
-            message = '👍 Great job! You can spot most AI-generated content!';
-        } else if (accuracy >= 40) {
-            message = '💪 Good effort! Keep practicing to improve your AI detection skills!';
-        } else {
-            message = '🎯 Keep learning! AI detection is tricky, but you\'ll get better with practice!';
-        }
-
-        document.getElementById('performanceMessage').textContent = message;
 
         this.showScreen('finalScreen');
     }

@@ -3,31 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human or AI? - Multiplayer Game</title>
+    <title>Human or AI — Perception Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="site">
     <div class="container">
         <!-- Welcome Screen -->
         <div id="welcomeScreen" class="screen active">
-            <h1>🤖 Human or AI?</h1>
-            <p class="subtitle">Test your ability to distinguish human creativity from AI generation!</p>
-            <div class="game-info">
-                <div class="info-card">
-                    <span class="info-icon">❓</span>
-                    <span>15 Questions</span>
-                </div>
-                <div class="info-card">
-                    <span class="info-icon">⏱️</span>
-                    <span>45 Seconds Each</span>
-                </div>
-                <div class="info-card">
-                    <span class="info-icon">👥</span>
-                    <span>Multiplayer Mode</span>
-                </div>
-            </div>
-            <input type="text" id="playerName" placeholder="Enter your name" maxlength="20">
-            <button id="startBtn" class="btn-primary">Start Game</button>
+            <header class="hero">
+                <h1 class="display-title">
+                    <span class="display-title__script">Human</span>
+                    <span class="display-title__serif">or AI</span>
+                </h1>
+            </header>
+
+            <label class="field-label" for="playerName">Your name</label>
+            <input type="text" id="playerName" placeholder="Enter your name" maxlength="20" autocomplete="nickname">
+            <button id="startBtn" class="btn-primary">Begin</button>
         </div>
 
         <!-- Game Screen -->
@@ -37,11 +32,8 @@
                     <span id="playerDisplay"></span>
                 </div>
                 <div class="progress-info">
-                    <span id="questionNumber">Question 1/15</span>
-                    <div class="timer-container">
-                        <span id="timer">45</span>
-                        <div class="timer-bar" id="timerBar"></div>
-                    </div>
+                    <span id="questionNumber">Question 1/10</span>
+                    <span id="timer">45</span>
                 </div>
                 <div class="score-info">
                     <span id="score">Score: 0</span>
@@ -58,31 +50,39 @@
         <!-- Explanation Screen -->
         <div id="explanationScreen" class="screen">
             <div class="explanation-container">
-                <div id="resultIcon" class="result-icon"></div>
+                <div id="resultIcon" class="result-icon" role="presentation"></div>
                 <h2 id="resultText"></h2>
                 <div class="explanation-content">
                     <p id="explanationText"></p>
                 </div>
-                <button id="nextBtn" class="btn-primary">Next Question</button>
+                <button id="nextBtn" class="btn-primary">Next question</button>
             </div>
         </div>
 
         <!-- Final Screen -->
         <div id="finalScreen" class="screen">
-            <h1>🎉 Game Complete!</h1>
+            <header class="hero hero--compact">
+                <p class="eyebrow">Session complete</p>
+                <h1 class="display-title display-title--small">
+                    <span class="display-title__script">Final</span>
+                    <span class="display-title__serif">verdict</span>
+                </h1>
+            </header>
+
             <div class="final-stats">
-                <h2 id="finalPlayerName"></h2>
-                <div class="stat-card">
-                    <span class="stat-value" id="finalScore">0</span>
-                    <span class="stat-label">Final Score</span>
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-value" id="finalScore">0</span>
+                        <span class="stat-label">Score</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="accuracy">0%</span>
+                        <span class="stat-label">Accuracy</span>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-value" id="accuracy">0%</span>
-                    <span class="stat-label">Accuracy</span>
-                </div>
-                <div class="performance-message" id="performanceMessage"></div>
             </div>
-            <button id="playAgainBtn" class="btn-primary">Play Again</button>
+
+            <button id="playAgainBtn" class="btn-primary">Play again</button>
         </div>
     </div>
 

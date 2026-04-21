@@ -1,0 +1,29 @@
+Shared leaderboard with Supabase
+==================================
+
+1) Create a project at https://supabase.com
+
+2) SQL: In the Supabase dashboard, open SQL Editor and run the full script
+   from the repo file: ../leaderboard-schema.sql
+   (Creates public.scores + RLS policies for anon read + insert.)
+
+3) API keys: Project Settings → API
+   - Copy "Project URL"
+   - Copy "anon" "public" key (not the service_role key)
+
+4) Config in the game folder:
+   - Open supabase.config.js in the project root (already there with empty url/key).
+   - Paste your Project URL and anon public key into url and key.
+   - (Optional) You can start from supabase.config.example.js instead — same shape.
+
+5) Deploy: upload index.html, game.js, styles.css, and your
+   supabase.config.js to the same origin (e.g. GitHub Pages root).
+
+6) The shipped game no longer calls Supabase from the UI. Use this schema and keys
+   if you add your own leaderboard or analytics layer.
+
+Notes
+-----
+- Anon key in a static site is public by design; RLS only allows SELECT and
+  INSERT on scores (no update/delete in the shipped schema).
+- To tighten abuse: add rate limits or Edge Functions later.
