@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human or AI? - Multiplayer Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="screen active">
+            <h1>🤖 Human or AI?</h1>
+            <p class="subtitle">Test your ability to distinguish human creativity from AI generation!</p>
+            <div class="game-info">
+                <div class="info-card">
+                    <span class="info-icon">❓</span>
+                    <span>15 Questions</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">⏱️</span>
+                    <span>45 Seconds Each</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">👥</span>
+                    <span>Multiplayer Mode</span>
+                </div>
+            </div>
+            <input type="text" id="playerName" placeholder="Enter your name" maxlength="20">
+            <button id="startBtn" class="btn-primary">Start Game</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen">
+            <div class="game-header">
+                <div class="player-info">
+                    <span id="playerDisplay"></span>
+                </div>
+                <div class="progress-info">
+                    <span id="questionNumber">Question 1/15</span>
+                    <div class="timer-container">
+                        <span id="timer">45</span>
+                        <div class="timer-bar" id="timerBar"></div>
+                    </div>
+                </div>
+                <div class="score-info">
+                    <span id="score">Score: 0</span>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <h2 id="questionTitle"></h2>
+                <div id="questionContent"></div>
+                <div id="answerButtons" class="answer-buttons"></div>
+            </div>
+        </div>
+
+        <!-- Explanation Screen -->
+        <div id="explanationScreen" class="screen">
+            <div class="explanation-container">
+                <div id="resultIcon" class="result-icon"></div>
+                <h2 id="resultText"></h2>
+                <div class="explanation-content">
+                    <p id="explanationText"></p>
+                </div>
+                <button id="nextBtn" class="btn-primary">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Final Screen -->
+        <div id="finalScreen" class="screen">
+            <h1>🎉 Game Complete!</h1>
+            <div class="final-stats">
+                <h2 id="finalPlayerName"></h2>
+                <div class="stat-card">
+                    <span class="stat-value" id="finalScore">0</span>
+                    <span class="stat-label">Final Score</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <span class="stat-label">Accuracy</span>
+                </div>
+                <div class="performance-message" id="performanceMessage"></div>
+            </div>
+            <button id="playAgainBtn" class="btn-primary">Play Again</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
